@@ -1,0 +1,15 @@
+matrix:
+  VERSION:
+    - "2.4.10"
+
+publish:
+  docker:
+    file: "$$VERSION/Dockerfile"
+    context: "$$VERSION"
+    username: $$DOCKER_USER
+    email: $$DOCKER_EMAIL
+    password: $$DOCKER_PASSWORD
+    repo: armhfbuild/mongo
+    tag: "$$VERSION"
+    force_tag: true
+    storage_driver: overlay
